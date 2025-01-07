@@ -89,16 +89,16 @@ app.get("/listStudents", async function (req, res) {
 });
 
 app.post("/getStudentInfo", async function (req, res) {
-  let reqBody = req.body;
+  let studentID = req.query.id;
   console.log("Request received to get Student Info");
-  let data = await readStudentInfo(reqBody.id);
+  let data = await readStudentInfo(studentID);
 
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(data));
 });
 
 app.post("/addStudent", async function (req, res) {
-  let reqBody = req.body;
+  let reqBody = req.query;
   console.log(
     "Request received to add student. Req body: " + JSON.stringify(reqBody)
   );
@@ -114,7 +114,7 @@ app.post("/addStudent", async function (req, res) {
 });
 
 app.post("/deleteStudent", async function (req, res) {
-  let reqBody = req.body;
+  let reqBody = req.query;
   console.log(
     "Request received to delete student. Req body: " + JSON.stringify(reqBody)
   );
@@ -125,7 +125,7 @@ app.post("/deleteStudent", async function (req, res) {
 });
 
 app.post("/editStudent", async function (req, res) {
-  let reqBody = req.body;
+  let reqBody = req.query;
   console.log(
     "Request received to update Student. Req body: " + JSON.stringify(reqBody)
   );
