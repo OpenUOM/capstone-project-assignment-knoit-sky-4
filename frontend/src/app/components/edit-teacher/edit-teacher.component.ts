@@ -3,9 +3,10 @@ import { Router, NavigationExtras } from '@angular/router';
 import {AppServiceService} from '../../app-service.service';
 
 @Component({
-  selector: 'app-edit-teacher',
-  templateUrl: './edit-teacher.component.html',
-  styleUrls: ['./edit-teacher.component.css']
+    selector: 'app-edit-teacher',
+    templateUrl: './edit-teacher.component.html',
+    styleUrls: ['./edit-teacher.component.css'],
+    standalone: false
 })
 export class EditTeacherComponent implements OnInit {
 

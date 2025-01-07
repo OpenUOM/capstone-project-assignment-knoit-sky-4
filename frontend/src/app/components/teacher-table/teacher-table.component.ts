@@ -3,9 +3,10 @@ import { Router, NavigationExtras } from '@angular/router';
 import { faTrash, faPlus, faPenSquare } from '@fortawesome/free-solid-svg-icons';
 import { AppServiceService } from '../../app-service.service';
 @Component({
-  selector: 'app-teacher-table',
-  templateUrl: './teacher-table.component.html',
-  styleUrls: ['./teacher-table.component.css']
+    selector: 'app-teacher-table',
+    templateUrl: './teacher-table.component.html',
+    styleUrls: ['./teacher-table.component.css'],
+    standalone: false
 })
 export class TeacherTableComponent implements OnInit {
 

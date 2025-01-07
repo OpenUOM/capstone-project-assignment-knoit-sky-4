@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { AppServiceService } from 'src/app/app-service.service';
 
 @Component({
-  selector: 'app-add-new-student',
-  templateUrl: './add-new-student.component.html',
-  styleUrls: ['./add-new-student.component.css']
+    selector: 'app-add-new-student',
+    templateUrl: './add-new-student.component.html',
+    styleUrls: ['./add-new-student.component.css'],
+    standalone: false
 })
 export class AddNewStudentComponent implements OnInit {
 
