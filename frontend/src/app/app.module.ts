@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,25 +15,18 @@ import { EditStudentComponent } from './components/edit-student/edit-student.com
 import { EditTeacherComponent } from './components/edit-teacher/edit-teacher.component';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    StudentTableComponent,
-    TeacherTableComponent,
-    AddNewTeacherComponent,
-    AddNewStudentComponent,
-    EditStudentComponent,
-    EditTeacherComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FontAwesomeModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        NavbarComponent,
+        StudentTableComponent,
+        TeacherTableComponent,
+        AddNewTeacherComponent,
+        AddNewStudentComponent,
+        EditStudentComponent,
+        EditTeacherComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
